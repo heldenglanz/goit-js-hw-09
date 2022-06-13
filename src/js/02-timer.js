@@ -6,33 +6,31 @@ const spans = document.querySelectorAll('.value')
 const started = document.querySelector('button')
 started.disabled = true;
 started.addEventListener('click', () => {
-    
-    
 })
 
-let timer = 0;
+
 myInput.addEventListener('change', (event) => {
     const { value } = event.target;
     const selectedDate = new Date(value)
     const currentDate = new Date();
+
+    timeCreater(selectedDate, currentDate)
+})
+
+function timeCreater(selectedDate, currentDate) {
     const difference = (selectedDate - currentDate);
     if (difference < 0) {
         return alert('Please choose a date in the future')
-    }
-    else {
-        started.disabled = false;
-    }
-    const { days, hours, minutes, seconds } = convertMs(difference);
+    } const { days, hours, minutes, seconds } = convertMs(difference);
     spans[0].textContent = days
     spans[1].textContent = hours
     spans[2].textContent = minutes
     spans[3].textContent = seconds
     console.log(days, hours, minutes, seconds);
-});
-function startingTimer(e) {
+    console.log(difference)
+}
 
-};
-console.log(started)
+
 
 flatpickr("#datetime-picker", options = {
     enableTime: true,
@@ -50,7 +48,6 @@ function convertMs(ms) {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-
   // Remaining days
   const days = Math.floor(ms / day);
   // Remaining hours
