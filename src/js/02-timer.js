@@ -28,7 +28,7 @@ function convertMs(ms) {
 let timerId = null;
 let choosedTime;
 
-const options = {
+options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -45,7 +45,7 @@ choosedTime = selectedDates[0].getTime();
 // console.log(choosedTime);
 }
 };
-  const flatpickr = flatpickr("#datetime-picker", options)
+  flatpickr("#datetime-picker", options)
 
 
 
