@@ -28,7 +28,7 @@ function convertMs(ms) {
 let timerId = null;
 let choosedTime;
 
-options = {
+const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
