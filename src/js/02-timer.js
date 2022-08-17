@@ -45,7 +45,7 @@ let choosedTime;
 choosedTime = selectedDates[0].getTime();
 // console.log(choosedTime);
 }
-});
+};
 
 function startTime(e){
     buttonEl.disabled = true;
