@@ -45,7 +45,7 @@ choosedTime = selectedDates[0].getTime();
 // console.log(choosedTime);
 }
 };
-  const flatpickr = flatpickr("#datetime-picker", options)
+  const flatpickr = flatpickr(".#datetime-picker", options)
 
 
 
