@@ -27,24 +27,27 @@ function convertMs(ms) {
 
 let timerId = null;
 let choosedTime;
-  const flatpickr = flatpickr("#datetime-picker", options)
-  const options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-        const thisTime = Date.now();
-        if(selectedDates[0]<thisTime){
-            alert("Please choose a date in the future")
-            buttonEl.disabled = true;
-            return
-        }
-        buttonEl.disabled = false;
+
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+      const thisTime = Date.now();
+      if(selectedDates[0]<thisTime){
+          alert("Please choose a date in the future")
+          buttonEl.disabled = true;
+          return
+      }
+      buttonEl.disabled = false;
 choosedTime = selectedDates[0].getTime();
 // console.log(choosedTime);
 }
 };
+  const flatpickr = flatpickr("#datetime-picker", options)
+
+
 
 function startTime(e){
     buttonEl.disabled = true;
